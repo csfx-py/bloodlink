@@ -21,9 +21,7 @@ app.use(
 );
 
 
-mongoose.connect(process.env.CONNECT, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }, (e) => {
-	console.log(e ? e : "Connected successfully to database");
-});
+mongoose.connect(process.env.CONNECT);
 
 app.use("/auth", require("./routers/authRouter"));
 app.use("/user", require("./routers/userRouter"));
